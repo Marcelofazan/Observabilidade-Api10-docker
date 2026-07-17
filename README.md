@@ -36,9 +36,8 @@ http_server_request_duration_seconds_count{http_response_status_code="200"}
 ```
 
 #### 🌐 Grafana 
--Abra o seu navegador de internet e acesse: **http://localhost:3000**
-
--Para acessar Faça login com as credenciais padrão do Grafana: 
+- Abra o seu navegador de internet e acesse: **http://localhost:3000**
+- Para acessar Faça login com as credenciais padrão do Grafana: 
 ```bash
 Usuário: admin Senha: admin
 ```
@@ -74,7 +73,6 @@ Refresh: Mude para On time range change
 - Selecione o projeto nos campos Instance e Job 
 - No canto superior do Grafana clique em cima e altere de Last 1 hour para Last 5 minutes. 
 - Clique em cima dos Segundos e altere o Refresh para 5 segundos. Isso força o Grafana a buscar os dados em tempo real que estão gerados agora.
-
 
 
 - **Passo 4** - Configurar Gráfico **Series Count**
