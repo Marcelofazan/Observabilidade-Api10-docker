@@ -53,7 +53,8 @@ Usuário: admin Senha: admin
 - **Passo 2.1** - Acessar link Grafana para baixar modelo de Dashboard **https://grafana.com/grafana/dashboards/**, buscar a opção: **Prometheus 2.0 Overview** e Copiar ID do Dashboard **3662**
 - **Passo 2.2** - Clicar no menu em Dashboard , clicar em **New** e escolher a segunda opção **Importar Dashboard**, informe o ID **3662** e clique em **Load**, selecione em DS_THEMIS **prometheus** e clique em Import.
 
-- **Passo 3** - Editar Váriaveis Padrão. No canto Superior direito do Dashboard, tem que clicar em **Edit** para aprecer as opções de **Editar**, clique no ícone de Engrenagem (Dashboard Options) -> e clique **View All Settings** em Settings escolha -> Aba **Variables**.
+- **Passo 3** - Editar Váriaveis Padrão.
+- No canto Superior direito do Dashboard, tem que clicar em **Edit** para aprecer as opções de **Editar**, clique no ícone de Engrenagem (Dashboard Options) -> e clique **View All Settings** em Settings escolha -> Aba **Variables**.
 
 - **Passo 3.1**  Variável: **job** edite da seguinte forma: 
 ```text
