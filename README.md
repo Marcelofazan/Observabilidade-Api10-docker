@@ -13,7 +13,7 @@ Exemplo de API observalidade e monitoramento com Grafana, Jaeger, OpenSearch e P
 
 #### 🔄 Executar a aplicação 
 
-- Inicie a aplicação e guarde o numero da porta **[http://localhost:XXXXX/swagger/index.html](https://localhost:XXXXX/swagger/index.html)** ou adicione **/swagger/index.html** no do link localhost para abrir a API. 
+- Inicie a aplicação e guarde o numero da porta **[https://localhost:XXXXX/swagger/index.html](https://localhost:XXXXX/swagger/index.html)** ou adicione **/swagger/index.html** no do link localhost para abrir a API. 
 
 | Tecnologia | Descrição | Host |
 |-----------|-----------|-----------|
@@ -24,7 +24,7 @@ Exemplo de API observalidade e monitoramento com Grafana, Jaeger, OpenSearch e P
 
 #### 🌐 Prometheus 
 - Clicar na Barra em Status -> Selecionar Targets health, para verificar se o serviço está rodando sem erros.
-- Para pesquisar **LOGS da API** de acesse métricas em Endpoint para abrir no navegador **https://localhost:60559/metrics)**, com a mesma porta que abriu no navegador, pois está tudo centralizado no Docker.
+- Para pesquisar **LOGS da API** de acesse métricas em Endpoint para abrir no navegador **https://localhost:XXXXX/metrics**, com a mesma porta que abriu no navegador, pois está tudo centralizado no Docker.
 - Procure metricas por exemplo que começam com **http_server** , ou que terminam com **sum** e **count**
 ```bash
 http_server_request_duration_seconds_count
@@ -36,18 +36,21 @@ http_server_request_duration_seconds_count{http_response_status_code="200"}
 ```
 
 #### 🌐 Grafana 
--Abra o seu navegador de internet e acesse: http://localhost:3000
--Para acessar Faça login com as credenciais padrão do Grafana: Usuário: admin Senha: admin
-- (O sistema pedirá para você criar uma nova senha no primeiro acesso). Informe a mesma
+-Abra o seu navegador de internet e acesse: **http://localhost:3000**
+
+-Para acessar Faça login com as credenciais padrão do Grafana: 
+```bash
+Usuário: admin Senha: admin
+```
 
 - **Passo 1** - Criar novo Data Source 
-- Informar http://localhost:9090/ ou http://host.docker.internal:9090 na conexão.
+- Informar **http://localhost:9090/** ou **http://host.docker.internal:9090** na conexão e Salvar.
 
 - **Passo 2** - Acessar link Grafana para baixar modelo de Dashboard **https://grafana.com/grafana/dashboards/**
 - Buscar a opção: **Prometheus 2.0 Overview** e Copiar ID do Dashboard **3662**
 - Clicar no menu em Dashboard , clicar em New -> escolher a segunda opção Importar Dashboard e informar o ID **3662** , selecionar em DS_THEMIS **prometheus** e clique em Import.
 
-- **Passo 3** - No canto Superior direito do dashboard, tem que estar com **Edit** ativado, clique no ícone de Engrenagem (Dashboard Settings) -> e clique Variables All Settings e depois vá na aba **Variables**.
+- **Passo 3** - No canto Superior direito do dashboard, tem que estar com **Edit** ativado, clique no ícone de Engrenagem (Dashboard Settings) -> e clique **Variables All Settings** e depois vá na aba **Variables**.
 - Edite as Variables da seguinte forma:
 
 - 1ª Variável: job
