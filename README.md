@@ -15,8 +15,8 @@ Exemplo de API observalidade e monitoramento com Grafana, Jaeger, OpenSearch e P
 - Necessário **Docker** instalado.
 
 #### 🔄 Executar a aplicação 
-
-- Inicie a aplicação e guarde o numero da porta **[https://localhost:XXXXX/swagger/index.html](https://localhost:XXXXX/swagger/index.html)** ou adicione **/swagger/index.html** no do link localhost para abrir a API. 
+- Ao iniciar a aplicação guarde o numero da porta **https://localhost:XXXXX/swagger/index.html**
+- Adicione **/swagger/index.html** no link, após localhost para abrir a API. 
 
 | Tecnologia | Descrição | Host |
 |-----------|-----------|-----------|
