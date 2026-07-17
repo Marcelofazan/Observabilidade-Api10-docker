@@ -60,7 +60,7 @@ Usuário: admin Senha: admin
 ```text
 Label values: Digite job
 Data source: Selecione prometheus.
-Alterar Query para **Classic Query** e Digite exatamente isto: label_values(up, job)
+Alterar Query para Classic Query e Digite exatamente isto: label_values(up, job)
 Remova a String do campo Regex 
 Refresh: opção On time range change
 Save & Back to Dashboard
@@ -70,7 +70,7 @@ Save & Back to Dashboard
 ```text
 Label values: Digite instance
 Data source: Selecione prometheus.
-Alterar Query para **Classic Query** e Digite exatamente isto: label_values(up{job=~"$job"}, instance)
+Alterar Query para Classic Query e Digite exatamente isto: label_values(up{job=~"$job"}, instance)
 Remova a String do campo Regex 
 Refresh: opção On time range change
 Save & Back to Dashboard
@@ -80,16 +80,14 @@ Save & Back to Dashboard
 ```text
 No topo do Grafana selecionar em Browser Time de Last 1 hour altere para Last 5 minutes.
 No topo do Grafana selecionar em Auto Refresh Interval 5 segundos. 
-No topo do Grafana selecione em Job **dashboardtelemetria**
-No topo do Grafana selecione em Instance **dashboardtelemetria:8080**
+No topo do Grafana selecione em Job dashboardtelemetria
+No topo do Grafana selecione em Instance dashboardtelemetria:8080
 Save
 ```
 
 - **Passo 4** - Configurar os Gráficos
-```text
 -No painel na Seção **series** no quadro do gráfico **Series Count**, clique nos três pontinhos e selecione Edit.
--Na query do gráfico, altere o conteudo de **Metrics browser** de **up{job=~"$job", instance=~"$instance"}** para :
-```
+- **Passo 4.1** - Na query do gráfico, altere o conteudo de **Metrics browser** de **up{job=~"$job", instance=~"$instance"}** para :
   
 ```bash
 rate(http_server_request_duration_seconds_count{job=~"$job"}[1m])
