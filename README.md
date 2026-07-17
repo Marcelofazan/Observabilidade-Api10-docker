@@ -24,13 +24,13 @@ Exemplo de API observalidade e monitoramento com Grafana, Jaeger, OpenSearch e P
 
 
 #### 🌐 Prometheus 
-Consulta de Query -> Clicar na Barra em Status -> Selecionar Targets health
-- Clicar em Endpoint para abrir no navegador **http://dashboardtelemetria:8080/metrics** 
-- Alterar o link para localhost **http://localhost:5297/metrics** para visualizar metricas.
+- Clicar na Barra em Status -> Selecionar Targets health, para verificar se o serviço está rodando sem erros.
+- Para pesquisar **LOGS da API** de acesse métricas em Endpoint para abrir no navegador **https://localhost:60559/metrics)**, com a mesma porta que abriu no navegador, pois está tudo centralizado no Docker.
+- Procure metricas por exemplo que começam com **http_server** , que que terminam com **sum** e **count**.
 ####
-- Procure metricas por exemplo que começam com **http_server** , por exemplo: Ver Total de requisições que chegam na API **http_server_request_duration_seconds_count**
-  
-- Exemplo de utilização oo Filtro	
+- Ver Total de requisições que chegam na API a variavel é **http_server_request_duration_seconds_count**.
+####
+No topo em Query digite o filtro na busca, para trazer resultados de requisições:
 ```bash
 http_server_request_duration_seconds_count{http_response_status_code="200"}
 ```
