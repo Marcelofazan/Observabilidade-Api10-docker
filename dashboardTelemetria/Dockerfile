@@ -13,7 +13,6 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["dashboardTelemetria/dashboardTelemetria.csproj", "dashboardTelemetria/"]
-COPY ["Tracing/Tracing.csproj", "Tracing/"]
 RUN dotnet restore "./dashboardTelemetria/dashboardTelemetria.csproj"
 COPY . .
 WORKDIR "/src/dashboardTelemetria"
