@@ -52,7 +52,7 @@ Usuário: admin Senha: admin
 - **Passo 3** - No canto Superior direito do Dashboard, tem que clicar em **Edit** para aprecer as opções de **Editar**, clique no ícone de Engrenagem (Dashboard Options) -> e clique **View All Settings** em Settings escolha -> Aba **Variables**.
 - Edite as Variables da seguinte forma:
 
-- 1ª Variável: job
+- **Passo 3.1**  Variável: job
 ```bash
 Label values: Digite job
 Data source: Selecione prometheus.
@@ -62,7 +62,7 @@ Refresh: opção On time range change
 Save & Back to Dashboard
 ```
 
-- 2ª Variável: instance
+- **Passo 3.2** Variável: instance
 ```bash
 Label values: Digite instance
 Data source: Selecione prometheus.
@@ -72,7 +72,7 @@ Refresh: opção On time range change
 Save & Back to Dashboard
 ```
 
-- 3ª Configurar Painel Browser Time, Job e Instance
+- **Passo 3.3** Configurar Painel Browser Time, Job e Instance
 - No topo do Grafana configure: 
 ```bash
 Selecionar em Browser Time de Last 1 hour altere para Last 5 minutes.
