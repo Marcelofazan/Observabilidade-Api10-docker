@@ -43,7 +43,7 @@ Usuário: admin Senha: admin
 ```
 
 - **Passo 1** - Criar novo Data Source 
-- Selecione **prometheus** na busca e Informar em Connection **http://localhost:9090/** ou **http://host.docker.internal:9090** ou **http://prometheus:9090** na e clique em Salvar.
+- Selecione **prometheus** na busca e Informar em Connection **http://host.docker.internal:9090** e clique em Salvar.
 
 - **Passo 2** - Acessar link Grafana para baixar modelo de Dashboard **https://grafana.com/grafana/dashboards/**
 - Buscar a opção: **Prometheus 2.0 Overview** e Copiar ID do Dashboard **3662**
