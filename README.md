@@ -25,7 +25,7 @@ Exemplo de API Observalidade com Grafana, Jaeger e Prometheus em C# ASP.NET Core
 | **Prometheus**  | Monitoramento Metricas | http://localhost:9090/ |		  
 
 
-#### 🌐 Prometheus 
+#### 🌐 Prometheus Interface Web (UI)
 - Clicar na Barra em Status -> Selecionar Targets health, para verificar se o serviço está rodando sem erros.
 - Para pesquisar **LOGS da API** de acesse métricas em Endpoint para abrir no navegador **https://localhost:XXXXX/metrics**, com a mesma porta que abriu no navegador, pois está tudo centralizado no Docker.
 - Procure metricas por exemplo que começam com **http_server** , ou que terminam com **sum** e **count**
@@ -38,12 +38,13 @@ http_server_request_duration_seconds_count
 http_server_request_duration_seconds_count{http_response_status_code="200"}
 ```
 
-#### 🌐 Grafana 
+#### 🌐 Grafana Interface Web (UI)
 - Abra o seu navegador de internet e acesse: **http://localhost:3000**
 - Para acessar Faça login com as credenciais padrão do Grafana: 
 ```bash
 Usuário: admin Senha: admin
 ```
+#### ⚙️ Configurações Grafana Dashboard
 
 - **Passo 1** - Criar novo Data Source 
 - Selecione **prometheus** na busca e Informar em Connection **http://host.docker.internal:9090** e clique em Salvar.
@@ -53,7 +54,6 @@ Usuário: admin Senha: admin
  - **Passo 2.1** - Acessar link Grafana para baixar modelo de Dashboard **https://grafana.com/grafana/dashboards/**, buscar a opção: **Prometheus 2.0 Overview** e Copiar ID do Dashboard **3662**
  - **Passo 2.2** - Clicar no menu em Dashboard , clicar em **New** e escolher a segunda opção **Importar Dashboard**, informe o ID **3662** e clique em **Load**, selecione em DS_THEMIS **prometheus** e clique em Import.
 
-#### ⚙️ Configurações Grafana Dashboard
 - **Passo 3** - No canto Superior direito do Dashboard, tem que clicar em **Edit** para aprecer as opções de **Editar**, clique no ícone de Engrenagem (Dashboard Options) -> e clique **View All Settings** em Settings escolha -> Aba **Variables**.
 - Edite as Variables da seguinte forma:
 
