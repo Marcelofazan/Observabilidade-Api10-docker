@@ -8,10 +8,12 @@ services:
       context: .
       dockerfile: dashboardTelemetria/Dockerfile
     ports:
-      - "5000:5000"
+      - "8080:8080" # FIXO: Porta HTTP externa mapeada para interna
+      - "8081:8081" # FIXO: Porta HTTPS externa mapeada para interna
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=5000
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
       - Jaeger__Host=jaeger
       - Jaeger__Port=4317
       - MongoDb__ConnectionString=mongodb://banco-mongodb:27017
