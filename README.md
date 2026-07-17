@@ -84,7 +84,7 @@ No topo do Grafana selecione em Instance **dashboardtelemetria:8080**
 Save
 ```
 
-- **Passo 4** - Configurar **series** no quadros do Grafana
+- **Passo 4** - Configurar os Gráficos
 - No painel na Seção **series** no quadro do gráfico **Series Count**, clique nos três pontinhos e selecione Edit.
 - Na query do gráfico, altere o conteudo de **Metrics browser** de **up{job=~"$job", instance=~"$instance"}** para :
   
