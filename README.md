@@ -88,11 +88,11 @@ Save
 - **Passo 4** - Configurar os Gráficos
 -No painel na Seção **series** no quadro do gráfico **Series Count**, clique nos três pontinhos e selecione Edit.
 - **Passo 4.1** - Na query do gráfico, altere o conteudo de **Metrics browser** de **up{job=~"$job", instance=~"$instance"}** para :
-  
+- Crie e Salve no primeiro gráfico em **series**  
 ```bash
 rate(http_server_request_duration_seconds_count{job=~"$job"}[1m])
 ```
-- Salve e crie ao lado outro gráfico em **series** utilize
+- Crie e Salve no segundo gráfico em **series** 
 ```bash
 rate(http_server_request_duration_seconds_sum{job=~"$job"}[1m])
 ```
