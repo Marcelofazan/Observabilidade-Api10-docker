@@ -78,7 +78,7 @@ Save & Back to Dashboard
 ```
 
 - **Passo 3.3** Configurar Painel Browser Time, Job e Instance
-```bash
+```text
 No topo do Grafana selecionar em Browser Time de Last 1 hour altere para Last 5 minutes.
 No topo do Grafana selecionar em Auto Refresh Interval 5 segundos. 
 No topo do Grafana selecione em Job **dashboardtelemetria**
