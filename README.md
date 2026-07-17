@@ -13,7 +13,8 @@ Exemplo de API Observalidade com Grafana, Jaeger e Prometheus em C# ASP.NET Core
 
 #### 💬 Requisitos do Projeto
 - Necessário **Docker** instalado.
-
+- Necessário trocar todas as portas a cada execução, opção **"publishAllPorts": true** no arquivo de propriedades **launchSettings**.
+  
 #### 🔄 Executar a aplicação 
 - Ao iniciar a aplicação guarde o numero da porta **https://localhost:XXXXX/swagger/index.html**
 - Adicione **/swagger/index.html** no link, após localhost para abrir a API. 
