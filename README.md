@@ -1,4 +1,4 @@
-## 📈 Observabilidade-Api10-docker
+## 📈 Observabilidade-Prometheus-docker
 Exemplo de API Observalidade com Grafana, Jaeger e Prometheus em C# ASP.NET Core 10 com banco de dados MongoDB.
 
 #### 🎨 Aqui está uma demonstração do projeto
