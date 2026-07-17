@@ -54,9 +54,8 @@ Usuário: admin Senha: admin
 - **Passo 2.2** - Clicar no menu em Dashboard , clicar em **New** e escolher a segunda opção **Importar Dashboard**, informe o ID **3662** e clique em **Load**, selecione em DS_THEMIS **prometheus** e clique em Import.
 
 - **Passo 3** - No canto Superior direito do Dashboard, tem que clicar em **Edit** para aprecer as opções de **Editar**, clique no ícone de Engrenagem (Dashboard Options) -> e clique **View All Settings** em Settings escolha -> Aba **Variables**.
-- Edite as Variables da seguinte forma:
 
-- **Passo 3.1**  Variável: job
+- **Passo 3.1**  Variável: **job** edite da seguinte forma: 
 ```text
 Label values: Digite job
 Data source: Selecione prometheus.
@@ -66,7 +65,7 @@ Refresh: opção On time range change
 Save & Back to Dashboard
 ```
 
-- **Passo 3.2** Variável: instance
+- **Passo 3.2** Variável: **instance** edite da seguinte forma: 
 ```text
 Label values: Digite instance
 Data source: Selecione prometheus.
@@ -76,7 +75,7 @@ Refresh: opção On time range change
 Save & Back to Dashboard
 ```
 
-- **Passo 3.3** Configurar Painel Browser Time, Job e Instance
+- **Passo 3.3** Configurar Painel Principal Grafana **Browser Time**, **Job** e **Instance** edite da seguinte forma: 
 ```text
 No topo do Grafana selecionar em Browser Time de Last 1 hour altere para Last 5 minutes.
 No topo do Grafana selecionar em Auto Refresh Interval 5 segundos. 
@@ -85,7 +84,7 @@ No topo do Grafana selecione em Instance **dashboardtelemetria:8080**
 Save
 ```
 
-- **Passo 4** - Configurar Gráfico **Series Count**
+- **Passo 4** - Configurar **series** no quadros do Grafana
 - No painel na Seção **series** no quadro do gráfico **Series Count**, clique nos três pontinhos e selecione Edit.
 - Na query do gráfico, altere o conteudo de **Metrics browser** de **up{job=~"$job", instance=~"$instance"}** para :
   
