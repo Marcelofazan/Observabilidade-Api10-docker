@@ -73,17 +73,18 @@ Save
 
 - 3ª Configurar Painel Tempo, Job e Instance 
 ```bash
-- No canto superior do Grafana clique em cima e altere de Last 1 hour para Last 5 minutes.
-- Clique em cima dos Segundos e altere o Refresh para 5 segundos. Isso força o Grafana a buscar os dados em tempo real. 
+- No topo do Grafana clique do intervalo de tempo e altere de Last 1 hour para Last 5 minutes.
+- Clique em segundos e altere o Refresh para 5 segundos. 
 - Selecione o projeto nos campos Instance e Job
 Save
 ```
 
 - **Passo 4** - Configurar Gráfico **Series Count**
-Vá no painel na Seção **series** em **Series Count**, clique nos três pontinhos dele e selecione Edit.
-Na query do gráfico, você provavelmente verá algo como **up{job=~"$job", instance=~"$instance"}** alterar para : 
+No painel na Seção **series** no quadro do gráfico **Series Count**, clique nos três pontinhos e selecione Edit.
+Na query do gráfico, altere o conteudo de Metrics browser de **up{job=~"$job", instance=~"$instance"}** para :
 ```bash
 rate(http_server_request_duration_seconds_count{job=~"$job"}[1m])
+Save
 ```
 
 
