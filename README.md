@@ -13,8 +13,7 @@ Exemplo de API Observalidade com Grafana, Jaeger e Prometheus em C# ASP.NET Core
 
 #### 💬 Requisitos do Projeto
 - Necessário **Docker** instalado.
-- Necessário trocar todas as portas a cada execução, opção **"publishAllPorts": true** no arquivo de propriedades **launchSettings**.
-  
+
 #### 🔄 Executar a aplicação Docker 
 
 VSCode Terminal [1]
@@ -36,8 +35,7 @@ dotnet build
 cd dashboardTelemetria
 dotnet run
 ```
-- Ao iniciar a aplicação guarde o numero da porta **https://localhost:XXXXX/swagger/index.html**
-- Adicione **/swagger/index.html** no link, após localhost para abrir a API. 
+- Para acessar a aplicação **http://localhost:8080/swagger/index.html**
 
 | Tecnologia | Descrição | Host |
 |-----------|-----------|-----------|
@@ -48,7 +46,7 @@ dotnet run
 
 #### 🌐 Prometheus Interface Web (UI)
 - Clicar na Barra em Status -> Selecionar Targets health, para verificar se o serviço está rodando sem erros.
-- Para pesquisar **LOGS da API** de acesse métricas em Endpoint para abrir no navegador **https://localhost:XXXXX/metrics**, com a mesma porta que abriu no navegador, pois está tudo centralizado no Docker.
+- Para pesquisar **LOGS da API** de acesse métricas em Endpoint para abrir no navegador **http://localhost:8080/metrics**, com a mesma porta que abriu no navegador, pois está tudo centralizado no Docker.
 - Procure metricas por exemplo que começam com **http_server** , ou que terminam com **sum** e **count**
 ```bash
 http_server_request_duration_seconds_count
