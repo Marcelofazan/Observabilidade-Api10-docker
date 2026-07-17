@@ -87,7 +87,7 @@ Save
 - **Passo 4** - Configurar Gráfico **Series Count**
 - No painel na Seção **series** no quadro do gráfico **Series Count**, clique nos três pontinhos e selecione Edit.
 - Na query do gráfico, altere o conteudo de **Metrics browser** de **up{job=~"$job", instance=~"$instance"}** para :
-- 
+  
 ```bash
 rate(http_server_request_duration_seconds_count{job=~"$job"}[1m])
 ```
