@@ -7,9 +7,9 @@ Exemplo de API observalidade e monitoramento com Grafana, Jaeger, OpenSearch e P
 #### 📋 O que voçê vai ver nesse Projeto
 | Tecnologia | Descrição |
 |-----------|-----------|
-| **Grafana**  |É o painel centralizador. Ele possui um plugin para OpenSearch que permite consultar e visualizar logs diretamente |
-| **Jaeger**  |Coleta e analisa traces (rastreamento de requisições) para diagnosticar gargalos. Ele também pode enviar métricas para o Prometheus. |
-| **Prometheus**  | Coleta e armazena métricas em tempo real. O Grafana se conecta à sua API/endpoint para exibi-las em dashboards. |
+| **Grafana**  | Plataforma para a observabilidade, monitoramento e visualização de dados gráficos. |
+| **Jaeger**  | Ferramenta para rastreamento distribuído de coleta metricas para analisa traces. |
+| **Prometheus**  | Ferramentas utilizada para monitoramento e observabilidade de sistemas e infraestruturas em tempo real. |
 
 #### 💬 Requisitos do Projeto
 - Necessário **Docker** instalado.
