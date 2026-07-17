@@ -58,7 +58,7 @@ Usuário: admin Senha: admin
 - Edite as Variables da seguinte forma:
 
 - **Passo 3.1**  Variável: job
-```bash
+```text
 Label values: Digite job
 Data source: Selecione prometheus.
 Alterar Query para **Classic Query** e Digite exatamente isto: label_values(up, job)
@@ -68,7 +68,7 @@ Save & Back to Dashboard
 ```
 
 - **Passo 3.2** Variável: instance
-```bash
+```text
 Label values: Digite instance
 Data source: Selecione prometheus.
 Alterar Query para **Classic Query** e Digite exatamente isto: label_values(up{job=~"$job"}, instance)
