@@ -72,11 +72,13 @@ Refresh: opção On time range change
 Save & Back to Dashboard
 ```
 
-- 3ª Configurar Painel Tempo, Job e Instance 
+- 3ª Configurar Painel Browser Time, Job e Instance
+- No topo do Grafana configure: 
 ```bash
-- No topo do Grafana clique do intervalo de tempo e altere de Last 1 hour para Last 5 minutes.
-- Clique em segundos e altere o Refresh para 5 segundos. 
-- Selecione o projeto nos campos Instance e Job
+Selecionar em Browser Time de Last 1 hour altere para Last 5 minutes.
+Selecionar em Auto Refresh Interval 5 segundos. 
+Selecione em Job **dashboardtelemetria**
+Selecione em Instance **dashboardtelemetria:8080**
 Save
 ```
 
