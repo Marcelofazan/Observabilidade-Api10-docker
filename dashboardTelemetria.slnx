@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="dashboardTelemetria/dashboardTelemetria.csproj" />
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
+</Solution>

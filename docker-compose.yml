@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  dashboardtelemetria:
+    image: ${DOCKER_REGISTRY-}dashboardtelemetria:latest
+    container_name: dashboardtelemetria
+    build:
+      context: .
+      dockerfile: dashboardTelemetria/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5000
+      - Jaeger__Host=jaeger
+      - Jaeger__Port=4317
+      - MongoDb__ConnectionString=mongodb://banco-mongodb:27017
+    depends_on:
+      - jaeger
+      - mongodb
+    networks:
+      - monitoring
+
+  mongodb:
+    image: mongo:latest
+    container_name: banco-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+    networks:
+      - monitoring
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger
+    ports:
+      - "16686:16686"   # Painel Web do Jaeger
+      - "4317:4317"     # Protocolo OTLP gRPC
+      - "4318:4318"     # Protocolo OTLP HTTP
+      - "6831:6831/udp" # Porta UDP utilizada pela telemetria
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+    networks:
+      - monitoring
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "127.0.0.1:9090:9090"
+    networks:
+      - monitoring
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    networks:
+      - monitoring
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  grafana-storage:
+  mongodb-data:
+
+networks:
+  monitoring:
+    driver: bridge
