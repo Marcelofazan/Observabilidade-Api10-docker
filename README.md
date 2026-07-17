@@ -43,7 +43,7 @@ Usuário: admin Senha: admin
 ```
 
 - **Passo 1** - Criar novo Data Source 
-- Selecione **prometheus** na busca e Informar em Connection **http://localhost:9090/** ou **http://host.docker.internal:9090** na e clieque em Salvar.
+- Selecione **prometheus** na busca e Informar em Connection **http://localhost:9090/** ou **http://host.docker.internal:9090** ou **http://prometheus:9090** na e clique em Salvar.
 
 - **Passo 2** - Acessar link Grafana para baixar modelo de Dashboard **https://grafana.com/grafana/dashboards/**
 - Buscar a opção: **Prometheus 2.0 Overview** e Copiar ID do Dashboard **3662**
@@ -57,9 +57,9 @@ Usuário: admin Senha: admin
 Label values: Digite job
 Data source: Selecione prometheus.
 Alterar Query para **Classic Query** e Digite exatamente isto: label_values(up, job)
-Apague o campo Regex 
+Remova a String do campo Regex 
 Refresh: opção On time range change
-Save
+Save & Back to Dashboard
 ```
 
 - 2ª Variável: instance
@@ -67,8 +67,9 @@ Save
 Label values: Digite instance
 Data source: Selecione prometheus.
 Alterar Query para **Classic Query** e Digite exatamente isto: label_values(up{job=~"$job"}, instance)
+Remova a String do campo Regex 
 Refresh: opção On time range change
-Save
+Save & Back to Dashboard
 ```
 
 - 3ª Configurar Painel Tempo, Job e Instance 
