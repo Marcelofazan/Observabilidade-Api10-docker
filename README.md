@@ -50,9 +50,10 @@ Usuário: admin Senha: admin
 - Selecione **prometheus** na busca e Informar em Connection **http://host.docker.internal:9090** e clique em Salvar.
 
 - **Passo 2** - Modelo de Gráfico Prometheus
-
- - **Passo 2.1** - Acessar link Grafana para baixar modelo de Dashboard **https://grafana.com/grafana/dashboards/**, buscar a opção: **Prometheus 2.0 Overview** e Copiar ID do Dashboard **3662**
- - **Passo 2.2** - Clicar no menu em Dashboard , clicar em **New** e escolher a segunda opção **Importar Dashboard**, informe o ID **3662** e clique em **Load**, selecione em DS_THEMIS **prometheus** e clique em Import.
+<br>
+**Passo 2.1** - Acessar link Grafana para baixar modelo de Dashboard **https://grafana.com/grafana/dashboards/**, buscar a opção: **Prometheus 2.0 Overview** e Copiar ID do Dashboard **3662**
+<br>
+**Passo 2.2** - Clicar no menu em Dashboard , clicar em **New** e escolher a segunda opção **Importar Dashboard**, informe o ID **3662** e clique em **Load**, selecione em DS_THEMIS **prometheus** e clique em Import.
 
 - **Passo 3** - No canto Superior direito do Dashboard, tem que clicar em **Edit** para aprecer as opções de **Editar**, clique no ícone de Engrenagem (Dashboard Options) -> e clique **View All Settings** em Settings escolha -> Aba **Variables**.
 - Edite as Variables da seguinte forma:
