@@ -43,37 +43,41 @@ Usuário: admin Senha: admin
 ```
 
 - **Passo 1** - Criar novo Data Source 
-- Informar **http://localhost:9090/** ou **http://host.docker.internal:9090** na conexão e Salvar.
+- Selecione **prometheus** na busca e Informar em Connection **http://localhost:9090/** ou **http://host.docker.internal:9090** na e clieque em Salvar.
 
 - **Passo 2** - Acessar link Grafana para baixar modelo de Dashboard **https://grafana.com/grafana/dashboards/**
 - Buscar a opção: **Prometheus 2.0 Overview** e Copiar ID do Dashboard **3662**
-- Clicar no menu em Dashboard , clicar em New -> escolher a segunda opção Importar Dashboard e informar o ID **3662** , selecionar em DS_THEMIS **prometheus** e clique em Import.
+- Clicar no menu em Dashboard , clicar em **New** e escolher a segunda opção **Importar Dashboard** e informe o ID **3662** e clique em **Load**, selecione em DS_THEMIS **prometheus** e clique em Import.
 
-- **Passo 3** - No canto Superior direito do dashboard, tem que estar com **Edit** ativado, clique no ícone de Engrenagem (Dashboard Settings) -> e clique **Variables All Settings** e depois vá na aba **Variables**.
+- **Passo 3** - No canto Superior direito do Dashboard, tem que clicar em **Edit** para aprecer as opções de **Editar**, clique no ícone de Engrenagem (Dashboard Options) -> e clique **View All Settings** em Settings escolha -> Aba **Variables**.
 - Edite as Variables da seguinte forma:
 
 - 1ª Variável: job
 ```bash
-Data source: Selecione prometheus.
 Label values: Digite job
-Alterar para **Classic Query** e Digite exatamente isto: label_values(up, job)
+Data source: Selecione prometheus.
+Alterar Query para **Classic Query** e Digite exatamente isto: label_values(up, job)
 Apague o campo Regex 
-Refresh: Mude para On time range change
+Refresh: opção On time range change
+Save
 ```
 
 - 2ª Variável: instance
 ```bash
-Data source: Selecione prometheus.
 Label values: Digite instance
-Alterar para **Classic Query** e Digite exatamente isto: label_values(up{job=~"$job"}, instance)
-Refresh: Mude para On time range change
+Data source: Selecione prometheus.
+Alterar Query para **Classic Query** e Digite exatamente isto: label_values(up{job=~"$job"}, instance)
+Refresh: opção On time range change
+Save
 ```
 
-- 3ª Configurar  Job e Instance e alterar filtro de Tempo
-- Selecione o projeto nos campos Instance e Job 
-- No canto superior do Grafana clique em cima e altere de Last 1 hour para Last 5 minutes. 
-- Clique em cima dos Segundos e altere o Refresh para 5 segundos. Isso força o Grafana a buscar os dados em tempo real que estão gerados agora.
-
+- 3ª Configurar Painel Tempo, Job e Instance 
+```bash
+- No canto superior do Grafana clique em cima e altere de Last 1 hour para Last 5 minutes.
+- Clique em cima dos Segundos e altere o Refresh para 5 segundos. Isso força o Grafana a buscar os dados em tempo real. 
+- Selecione o projeto nos campos Instance e Job
+Save
+```
 
 - **Passo 4** - Configurar Gráfico **Series Count**
 Vá no painel na Seção **series** em **Series Count**, clique nos três pontinhos dele e selecione Edit.
