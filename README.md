@@ -13,7 +13,8 @@ Exemplo de API observalidade e monitoramento com Grafana, Jaeger, OpenSearch e P
 
 #### 🔄 Executar a aplicação 
 
-Iniciar a aplicação em **http://localhost:5297/swagger/index.html**
+- Iniciar a aplicação em **[http://localhost:59666/swagger/index.html](https://localhost:59666/swagger/index.html)**
+- Adicioner **/swagger/index.html** no link localhost que abrir. 
 
 | Tecnologia | Descrição | Host |
 |-----------|-----------|-----------|
@@ -25,11 +26,10 @@ Iniciar a aplicação em **http://localhost:5297/swagger/index.html**
 #### 🌐 Prometheus 
 Consulta de Query -> Clicar na Barra em Status -> Selecionar Targets health
 - Clicar em Endpoint para abrir no navegador **http://host.docker.internal:5297/metrics** 
-- Alterar o link para localhost **http://localhost:5297/metrics**
-
+- Alterar o link para localhost **http://localhost:5297/metrics** para visualizar metricas.
 ####
-- Procurar metricas por exemplo que começam com **http_server** 
-- Ver Total de requisições que chegam na API **http_server_request_duration_seconds_count** utilizando o filtro	
+- Procure metricas por exemplo que começam com **http_server** , por exemplo: Ver Total de requisições que chegam na API **http_server_request_duration_seconds_count**
+- Utilizar o Filtro	
 ```bash
 http_server_request_duration_seconds_count{http_response_status_code="200"}
 ```
